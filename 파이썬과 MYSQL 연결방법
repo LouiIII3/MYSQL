@@ -1,0 +1,3 @@
+//pymysql 임포트 후 (윈도우 창에 pip install pymysql 입력)
+
+pymysql.connect(host=서버ip주소, user=사용자, password=암호, db=데이터베이스, charset=문자세트)
