@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE TRIGGER myTrigger
+	AFTER DELETE -- 트리거는 DELETE문이 발생한 이후에 작동하라는 의미 
+    ON trigger_table
+    FOR EACH ROW
+BEGIN 
+	SET @msg = '가수 그룹이 삭제됨' ; -- 트리거에서 실제 작동하는 부분 
+END $$ 
+DELIMITER ;
