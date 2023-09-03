@@ -1,3 +1,23 @@
 //pymysql 임포트 후 (윈도우 창에 pip install pymysql 입력)
-
+//연결이 되어도 아무것도 뜨지 않음
 pymysql.connect(host=서버ip주소, user='사용자', password=암호, db=데이터베이스, charset=문자세트)
+
+
+//커서
+cur = login.cursor()
+cur.execute("CREATE TABLE userTable (id char(4), userName char(15), email char(20), birthYear int)")
+
+
+//값넣기
+cur.execute("INSERT INTO userTable VALUES( 'iron','토니','ironman@gmail.com', 2008)")
+cur.execute("INSERT INTO userTable VALUES( 'thor','토르','thor@gmail.com', 2011)")
+cur.execute("INSERT INTO userTable VALUES( 'hulk','헐크','hurk@gmail.com', 2003)")
+cur.execute("INSERT INTO userTable VALUES( 'cap','캡틴','captain@gmail.com', 2011)")
+
+
+//값 완전히 저장
+login.commit()
+
+
+//db 닫기
+login.close()
